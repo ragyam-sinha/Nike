@@ -1,0 +1,62 @@
+body {
+    background-color: #111827; /* Dark background */
+  }
+  
+  /* Search input */
+  .search-input {
+    background-color: #374151;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    outline: none;
+  }
+  
+  /* Color dots */
+  .color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+  }
+  
+  /* Size buttons */
+  .size-button {
+    background-color: #374151;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .size-button:hover {
+    background-color: #4b5563;
+  }
+  
+  /* Buy button */
+  .buy-button {
+    background-color: #ec4899;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .buy-button:hover {
+    background-color: #db2777;
+  }
+  
+  /* Sneaker Image */
+  .sneaker-img {
+    width: 500px;
+    transition: transform 0.5s;
+  }
+  
+  .sneaker-img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Carousel Images */
+  .carousel-img {
+    border-radius: 0.75rem;
+    width: 100%;
+  }
+  
