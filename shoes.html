@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shoe Store Clone</title>
+
+  <!-- TailwindCSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+  <!-- SwiperJS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="text-white font-sans">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center p-6">
+    <div class="flex items-center gap-2">
+      <!-- Nike logo -->
+      <img src="https://media.designrush.com/inspiration_images/134805/conversions/_1512076803_93_Nike-mobile.jpg" alt="Nike Logo" class="w-8 h-8">
+      <!-- Nike text -->
+      <div class="text-2xl font-bold text-orange-500">Nike</div>
+    </div>
+    <ul class="flex gap-8 text-gray-300">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Women</a></li>
+      <li><a href="#">Customize</a></li>
+      <li><a href="#">Collections</a></li>
+    </ul>
+    <input type="text" placeholder="Search..." class="search-input">
+  </nav>
+
+  <!-- Main Section -->
+  <section class="flex justify-center items-center p-10">
+    
+    <!-- Left Text Side -->
+    <div class="flex flex-col gap-4">
+      <h1 class="text-4xl font-semibold">Airmax 270 React</h1>
+      <p class="text-gray-400 text-lg">$270</p>
+
+      <!-- Color options -->
+      <div class="flex gap-3">
+        <div class="color-dot bg-purple-400"></div>
+        <div class="color-dot bg-green-400"></div>
+        <div class="color-dot bg-blue-400"></div>
+      </div>
+
+      <!-- Size options -->
+      <div class="flex gap-3 mt-4">
+        <button class="size-button">7.5</button>
+        <button class="size-button">8</button>
+        <button class="size-button">8.5</button>
+      </div>
+
+      <!-- Buy Button -->
+      <button class="buy-button">BUY</button>
+    </div>
+
+    <!-- Center Sneaker Image -->
+    <div class="relative ml-20">
+      <img id="main-image" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/59ff827c-5672-4657-9eca-0179dfe206c3/AIR+MAX+DN8.png" alt="Airmax" class="sneaker-img block">
+    </div>
+
+    <!-- Previous Image Box (stores the previous main image) -->
+    <div class="previous-image-box mt-10 p-4 border-2 border-gray-300 rounded-lg">
+      <h3 class="text-xl text-gray-400 mb-4">Previous Image</h3>
+      <img id="previous-image" src="" alt="Previous Image" class="w-60 h-60 object-cover">
+    </div>
+
+    <!-- Right Side Small Carousel -->
+    <div class="swiper w-24 ml-12">
+      <div class="swiper-wrapper flex flex-col gap-6">
+        <div class="swiper-slide">
+          <img src="https://cdn.media.amplience.net/i/hibbett/air-max-3-1-blog" class="carousel-img" onclick="changeMainImage(this)">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://sneakernews.com/wp-content/uploads/2024/11/airmax-1000.jpg" class="carousel-img" onclick="changeMainImage(this)">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2024%2F11%2F22%2Fnike-air-max-muse-black-metallic-silver-fv1920-001-official-launch-release-info-001.jpg?q=75&w=800&cbr=1&fit=max" class="carousel-img" onclick="changeMainImage(this)">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    function changeMainImage(imgElement) {
+      const mainImage = document.getElementById("main-image");
+      const previousImage = document.getElementById("previous-image");
+
+      // Store the current main image before changing it
+      previousImage.src = mainImage.src;
+
+      // Update the main image to the clicked thumbnail
+      mainImage.src = imgElement.src;
+
+      // Optionally, set a fallback image in case the selected image is broken or fails to load
+      mainImage.onerror = function() {
+        mainImage.src = "https://via.placeholder.com/600x600?text=Image+Not+Available";
+      };
+    }
+  </script>
+
+</body>
+</html>
